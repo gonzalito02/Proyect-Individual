@@ -43,7 +43,7 @@ module.exports = (sequelize) => {
     },
     img: {
       type: DataTypes.STRING,
-      defaultValue: "https://pbs.twimg.com/profile_images/1406782782316163074/NEx6BPAT_400x400.jpg"
+      defaultValue: "no image"
     },
   }, {
     timestamps: false,

@@ -25,9 +25,12 @@ export default function Home () {
     var navControl = false
     var firstPrevControl = false
     var nextLastControl = false
+
+    var disabledBut = false
     
     if (page === 1 || pokes.length === 0) firstPrevControl = true
     if (page === limitPage || pokes.length === 0) nextLastControl = true
+    if (types.length === 0) disabledBut = true
 
     var pageControl = (e) => {
         if (e.target.name === "first") setPage(1)
@@ -37,7 +40,7 @@ export default function Home () {
     }
 
     useEffect (() => {
-        if (pokes.length === 0 && types.length === 0) {dispatch(getPokemons()); dispatch(getTypes())};
+        if (pokes.length === 0 && types.length === 0) {dispatch(getPokemons()).then(()=> dispatch(getTypes()))};
         dispatch(cleanDetail())
     }, [dispatch, pokes.length, types.length])
 
@@ -79,11 +82,11 @@ export default function Home () {
         <div>
                     <div className="buttonsContainer">
                         <img src="titulo.png" height="95px" width="200px"></img>
-                        <Link key="01" to = "/createPokemon"><button className="limpiarFiltros">Create Pokemon</button></Link>
-                        <SearchBar key="02"/>
+                        <Link key="01" to = "/createPokemon"><button disabled={disabledBut} className="limpiarFiltros">Create Pokemon</button></Link>
+                        {!disabledBut? <SearchBar key="02"/> : <h2>- Cargando -</h2>}
                         <div className="filter">
                                 <label>Orden: </label>
-                                    <select onChange={e => handleFilterAscDesc(e)}>
+                                    <select disabled={disabledBut} onChange={e => handleFilterAscDesc(e)}>
                                         <option value = "ID" key = "idkey">ID Pokedex</option>
                                         <option value = "ascendente" key = "asc">Ascendente</option>
                                         <option value = "descendente" key = "desc">Descendente</option>
@@ -92,7 +95,7 @@ export default function Home () {
                         </div>
                         <div className="filter">
                                 <label>Filtro por origen: </label>
-                                    <select onChange={e => handleFilterApiDb(e)}>
+                                    <select disabled={disabledBut} onChange={e => handleFilterApiDb(e)}>
                                         <option value = "all" key = "allApiDb">Todos</option>
                                         <option value = "api" key = "api">Api</option>
                                         <option value = "creados" key = "db">Creados</option>
@@ -100,7 +103,7 @@ export default function Home () {
                         </div>
                         <div className="filter">        
                                 <label>Filtro por tipo: </label>
-                                    <select onChange={e => handleFilterTypes(e)}>
+                                    <select disabled={disabledBut} onChange={e => handleFilterTypes(e)}>
                                     <option value = "all" key = "alltypes">None</option>
                                     {types? types.map(t => {
                                         return (
@@ -110,7 +113,7 @@ export default function Home () {
                                     }
                                 </select>
                         </div>
-                        <button className="limpiarFiltros" onClick={e => {handleClickReload(e)}}>Limpiar filtros!</button>   
+                        <button disabled={disabledBut} className="limpiarFiltros" onClick={e => {handleClickReload(e)}}>Limpiar filtros!</button>   
                     </div>
                         <div className="ground">
                             {(pokes.length !== 0 && types.length !== 0)     
@@ -127,10 +130,10 @@ export default function Home () {
                                         </div>
                                     </div>
                             : (pokes.length === 0 && types.length === 0)
-                            ?<h2>Cargando...</h2>
+                            ?<h2 className="loading">Cargando...</h2>
                             : (pokes.length === 0 && types.length !== 0)?
                             <h2>No se encontraron pokemons con esos filtros :C</h2>
-                            :<h2>Cargando...</h2>
+                            :<h2 className="loading">Cargando...</h2>
                             }      
                 <div className="navControl">
                     <ul>

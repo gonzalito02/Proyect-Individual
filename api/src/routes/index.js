@@ -16,7 +16,7 @@ router.get("/pokemons", async (req, res) => {
     
     try {
     
-        let limit = 20 //marca el limite de recorrido de la API, o número máximo de pokemons a traer (menos 1)
+        let limit = 40 //marca el limite de recorrido de la API, o número máximo de pokemons a traer (menos 1)
         
         let pokesDB = await Pokemon.findAll({
             include:{
@@ -54,7 +54,7 @@ router.get("/pokemons", async (req, res) => {
         
         let allPokes = apiPoke.concat(pokesDB)
         
-        res.json(allPokes)  
+        res.status(200).json(allPokes)  
 
     } catch (err) {
 
