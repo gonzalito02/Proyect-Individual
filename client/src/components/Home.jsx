@@ -130,10 +130,16 @@ export default function Home () {
                                         </div>
                                     </div>
                             : (pokes.length === 0 && types.length === 0)
-                            ?<h2 className="loading">Cargando...</h2>
+                            ?<div className="loading">
+                                <div className="loader"></div>
+                                <div className="loader2"></div>
+                                </div>
                             : (pokes.length === 0 && types.length !== 0)?
                             <h2>No se encontraron pokemons con esos filtros :C</h2>
-                            :<h2 className="loading">Cargando...</h2>
+                            :<div className="loading">
+                                <div className="loader"></div>
+                                <div className="loader2"></div>
+                            </div>
                             }      
                 <div className="navControl">
                     <ul>

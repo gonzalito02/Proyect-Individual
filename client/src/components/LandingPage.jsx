@@ -30,6 +30,10 @@ export default function LandingPage () {
             <Link to="/home">
                 <button className="limpiarFiltros" disabled={loading}>Entrar!</button>
             </Link>
+            {(loading)?<div className="loading2">
+                <div className="loader"></div>
+                <div className="loader2"></div>
+            </div>: null}
         </div>
     )
 }
