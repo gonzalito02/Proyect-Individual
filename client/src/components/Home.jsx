@@ -26,7 +26,7 @@ export default function Home () {
     var firstPrevControl = false
     var nextLastControl = false
 
-    var disabledBut = false
+    var disabledBut = false //
     
     if (page === 1 || pokes.length === 0) firstPrevControl = true
     if (page === limitPage || pokes.length === 0) nextLastControl = true
