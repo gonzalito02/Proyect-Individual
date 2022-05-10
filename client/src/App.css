@@ -36,3 +36,173 @@
     transform: rotate(360deg);
   }
 }
+
+.landingPage {
+  background-color: rgba(41, 38, 88, 0.432);
+  width: 600px;
+  height: 180px;
+  padding: 0px;
+}
+
+#enterButton {
+  color:black;
+}
+
+.buttonsContainer {
+  display: flex;
+  background-color:rgb(41, 13, 13);
+  padding: 10px;
+  width: 98,5%;
+}
+.backHome {
+  padding: 10px;
+  color: black;
+  font-size: 15px;
+  width: 200px;
+}
+
+.search{
+  display: flex;
+  padding: 20px
+}
+
+.searchBar {
+  padding: 1px;
+  width: 200px;
+}
+
+.searchButton {
+  margin-left: 5px
+}
+
+.limpiarFiltros {
+  height: 40px;
+  width: 150px;
+  margin-left: 15px;
+  margin-top: 25px;
+}
+
+#land {
+  color: white;
+}
+
+.filter {
+  color: white;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.ground {
+  background-color: rgba(255, 255, 255, 0.471);  
+  padding: 5px;
+}
+
+.cardContainer {
+  display: inline-block;
+  justify-content: center;
+  background: rgb(57, 66, 115);
+  padding: 10px 10px;
+  height: 580px;
+  width: 1400px;
+}
+
+.pokeCard {
+  height: 260px;
+  width: 200px;
+  background-color: rgb(34, 48, 70);
+  margin: 12px;
+  float: left;
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+}
+
+.pokeCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  background-color: rgba(34, 48, 70, 0.537);
+  border-radius: 19px; 
+}
+
+.typesPoke {
+  display: flex;
+}
+
+.typosDetail {
+  color:rgb(155, 211, 239);
+  width: 100px;
+  float: left;
+}
+
+.navControl {
+  background-color: white;
+  padding: 5px;
+  border: 10px;
+  border-color: #282c34;
+}
+
+.namePoke {
+  color: white;
+}
+
+.detailContainer {
+  display: inline-block;
+  justify-content: center;
+  background: rgb(28, 36, 70);
+  padding: 10px 10px;
+  height: 680px;
+  width: 1100px;
+}
+
+.detailGround {
+  display: flex;
+  flex-direction: row;
+}
+
+.component {
+  justify-content: left;
+  padding: 10px;
+  color: white;
+  background-color: rgba(34, 48, 70, 0.537);
+  width: 600px;
+}
+
+.componentImg {
+  background-color: rgba(75, 95, 126, 0.537);
+  border: white;
+  width: 80%;
+}
+
+.createContainer {
+  display: inline-block;
+  justify-content: center;
+  background: rgb(28, 36, 70);
+  padding: 10px 10px;
+  height: 680px;
+  width: 1100px;
+}
+
+.titleForm {
+  color: white;
+  font-size: 35px;
+}
+.form {
+  color: white;
+}
+
+.formSpace {
+  display: flex;
+  background-color: rgba(43, 31, 87, 0.416);
+  height: 45px;
+}
+
+.label {
+  font-size: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.error {
+  padding: 5px;
+  margin-left: 30px;
+  font-size: 20px;
+  color: red;
+}
